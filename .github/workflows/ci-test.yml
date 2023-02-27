@@ -55,7 +55,9 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: approved-test-step-1
-        run: echo "RUNNING TEST STEP 1 with $THE_NAME"
+        run: |
+          echo "RUNNING TEST STEP 1 with following context"
+          echo "$GITHUB_CONTEXT"
 
       - name: unit-test-run
         shell: bash
